@@ -17,7 +17,7 @@
 
         <nav class="main-nav" aria-label="Main">
             <a href="#home" class="active" aria-current="page">Home</a>
-            <a href="#about">About</a>
+            <a id="about-link" href="#about" aria-haspopup="dialog" aria-controls="about" aria-expanded="false">About</a>
             <a href="#service">Services</a>
             <a href="#announcements">Announcements</a>
             <a href="#contact">Contact</a>
@@ -88,17 +88,155 @@
             </ul>
         </section>
         
+        <section class="services" id="service" aria-labelledby="services-title">
+            <h2 id="services-title">Services We Offer</h2>
+            <p class="services-description">
+                Find the campus services you need in one place.
+            </p>
+
+            <div class="services-container">
+
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">📚</div>
+                    <h3>Library</h3>
+                    <p>
+                        Find a quiet place to study, read books,
+                        and use learning resources during your vacant time.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">📝</div>
+                    <h3>Registrar</h3>
+                    <p>
+                        Get information about enrollment, school records,
+                        and other academic documents.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">💻</div>
+                    <h3>IT Support</h3>
+                    <p>
+                        Find help with campus technology, computer access,
+                        and common technical concerns.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="about-modal" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-describedby="about-description" hidden>
+            <div class="about-modal__backdrop" data-close-about></div>
+            <div class="about-modal__content" role="document" tabindex="-1">
+                <button class="about-modal__close" type="button" aria-label="Close About LPUR Hangout" data-close-about>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <header class="about-modal__hero">
+                    <div class="about-modal__mark" aria-hidden="true">
+                        <span>LPUR</span>
+                        <i></i>
+                    </div>
+                    <div>
+                        <p class="about-modal__eyebrow">About LPUR Hangout</p>
+                        <h2 id="about-title">Make every campus break count.</h2>
+                    </div>
+                </header>
+
+                <p class="about-modal__description" id="about-description">
+                    LPUR Hangout is a student-made guide to the best places to relax, study, eat, and connect at LPU Cavite. It puts useful campus spaces in one friendly, easy-to-explore home.
+                </p>
+
+                <div class="about-highlights" aria-label="What LPUR Hangout is and why it was created">
+                    <article class="about-highlight">
+                        <span class="about-highlight__icon" aria-hidden="true">⌁</span>
+                        <div>
+                            <h3>A campus companion</h3>
+                            <p>Discover hangout spots and services that fit whatever your vacant time looks like.</p>
+                        </div>
+                    </article>
+                    <article class="about-highlight">
+                        <span class="about-highlight__icon" aria-hidden="true">✦</span>
+                        <div>
+                            <h3>Built with a purpose</h3>
+                            <p>We created LPUR Hangout so finding a comfortable place on campus feels quick, clear, and stress-free.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <section class="about-team" aria-labelledby="team-title">
+                    <div class="about-team__heading">
+                        <div>
+                            <p class="about-modal__eyebrow">The people behind it</p>
+                            <h3 id="team-title">Meet the developers</h3>
+                        </div>
+                        <span class="about-team__count" aria-label="Three developers">03</span>
+                    </div>
+
+                    <div class="developer-grid">
+                        <article class="developer-card" style="--card-delay: 90ms">
+                            <div class="developer-card__visual">
+                                <img class="developer-photo" id="bonto" src="images/Bonto-DEV.jpg" alt="Illustrated profile avatar for Aquillis Danielson Bonto">
+                                <span class="developer-card__number" aria-hidden="true">01</span>
+                            </div>
+                            <p class="developer-card__role">Interface &amp; layout</p>
+                            <h4>Aquillis Danielson <span>BONTO</span></h4>
+                            <p class="developer-card__contribution">Designed the website layout and shaped the visual experience across the page.</p>
+                        </article>
+                        <article class="developer-card" style="--card-delay: 150ms">
+                            <div class="developer-card__visual">
+                                <img class="developer-photo" id="luna" src="images/Luna-DEV.jpg" alt="Illustrated profile avatar for Antonio Luis Luna">
+                                <span class="developer-card__number" aria-hidden="true">02</span>
+                            </div>
+                            <p class="developer-card__role">Content &amp; research</p>
+                            <h4>Antonio Luis <span>LUNA</span></h4>
+                            <p class="developer-card__contribution">Organized the campus information, services, and hangout-spot content.</p>
+                        </article>
+                        <article class="developer-card" style="--card-delay: 210ms">
+                            <div class="developer-card__visual">
+                                <img class="developer-photo" id="german" src="images/German-DEV.jpg" alt="Illustrated profile avatar for Cleone Mathew German">
+                                <span class="developer-card__number" aria-hidden="true">03</span>
+                            </div>
+                            <p class="developer-card__role">Interactions &amp; testing</p>
+                            <h4>Cleone Mathew <span>GERMAN</span></h4>
+                            <p class="developer-card__contribution">Built the interactive features and refined the site for a smooth, responsive experience.</p>
+                        </article>
+                    </div>
+                </section>
+            
+                <button class="about-modal__done" type="button" data-close-about>
+                    Back to homepage <span aria-hidden="true">
+                    <svg id="svg-aboutback" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg></span>
+                </button>
+
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
-        <section class="footer-section" id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title"><strong>Contact Us</strong></h2>
-            <ul>
-                <li><strong>Location:</strong> <button class="location-link" type="button" aria-haspopup="dialog" aria-controls="location-dialog">Lyceum of the Philippines University, Governor's Drive, General Trias, Cavite, 4017 Philippines</button></li>
-                <li><strong>Email:</strong> <a class="footer-link" href="mailto:admission_cvt@lpu.edu.ph">admission_cvt@lpu.edu.ph</a></li>
-                <li><strong>Hours:</strong> Mon to Fri, 8 AM to 5 PM</li>
-            </ul>
-        </section>
+        <div class="footer-content">
+            <section class="footer-section" id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title"><strong>Contact Us</strong></h2>
+                <ul>
+                    <li><strong>Location:</strong> <button class="location-link" type="button" aria-haspopup="dialog" aria-controls="location-dialog">Lyceum of the Philippines University, Governor's Drive, General Trias, Cavite, 4017 Philippines</button></li>
+                    <li><strong>Email:</strong> <a class="footer-link" href="mailto:admission_cvt@lpu.edu.ph">admission_cvt@lpu.edu.ph</a></li>
+                    <li><strong>Hours:</strong> Mon to Fri, 8 AM to 5 PM</li>
+                </ul>
+            </section>
+            <div class="footer-logos">
+                <img src="images/LPU logo.png" alt="Lyceum of the Philippines University - Cavite">
+                <img src="images/LPUR HANGOUT logo.png" alt="LPUR Hangout">
+            </div>
+        </div>
 
         <hr>
         <p class="footer-copy">&copy; 2026 LPUR HANGOUT (LPU-CAVITE). All rights reserved.</p>
