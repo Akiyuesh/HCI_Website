@@ -73,23 +73,42 @@ const aboutLink = document.querySelector("#about-link");
 const aboutModal = document.querySelector(".about-modal");
 const aboutModalContent = document.querySelector(".about-modal__content");
 const closeAboutButtons = document.querySelectorAll("[data-close-about]");
+const aboutCloseButton = aboutModal?.querySelector(".about-modal__close");
 let lastFocusedElement;
+let closeModalTimer;
+
+function getModalCloseDelay() {
+    return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? 0 : 260;
+}
+
+const focusableModalElements = () => aboutModal?.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+);
 
 function openAboutModal() {
     if (!aboutModal) return;
 
+    window.clearTimeout(closeModalTimer);
     lastFocusedElement = document.activeElement;
+    aboutModal.classList.remove("is-closing");
     aboutModal.hidden = false;
     document.body.classList.add("modal-open");
-    aboutModalContent.focus();
+    aboutLink?.setAttribute("aria-expanded", "true");
+    window.requestAnimationFrame(() => aboutCloseButton?.focus());
 }
 
 function closeAboutModal() {
-    if (!aboutModal || aboutModal.hidden) return;
+    if (!aboutModal || aboutModal.hidden || aboutModal.classList.contains("is-closing")) return;
 
-    aboutModal.hidden = true;
+    aboutModal.classList.add("is-closing");
     document.body.classList.remove("modal-open");
-    lastFocusedElement?.focus();
+    aboutLink?.setAttribute("aria-expanded", "false");
+
+    closeModalTimer = window.setTimeout(() => {
+        aboutModal.hidden = true;
+        aboutModal.classList.remove("is-closing");
+        lastFocusedElement?.focus();
+    }, getModalCloseDelay());
 }
 
 aboutLink?.addEventListener("click", (event) => {
@@ -102,5 +121,30 @@ closeAboutButtons.forEach((button) => {
 });
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeAboutModal();
+    if (!aboutModal || aboutModal.hidden) return;
+
+    if (event.key === "Escape") {
+        closeAboutModal();
+        return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusableElements = [...(focusableModalElements() ?? [])];
+    if (focusableElements.length === 0) {
+        event.preventDefault();
+        aboutModalContent?.focus();
+        return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+    }
 });

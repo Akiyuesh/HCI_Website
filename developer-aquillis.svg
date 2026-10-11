@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrated profile for Aquillis Danielson Bonto</title>
+  <desc id="desc">A warm editorial-style illustration of a developer at work.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CDE3F0"/><stop offset="1" stop-color="#7DA9C3"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A6192E"/><stop offset="1" stop-color="#6F0F27"/></linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <circle cx="510" cy="92" r="112" fill="#F4CB68" opacity=".55"/>
+  <path d="M0 379c102-67 203-58 310-4 105 53 205 47 330-18v123H0z" fill="#173F6B" opacity=".22"/>
+  <rect x="92" y="310" width="456" height="112" rx="22" fill="#FFF9E9" transform="rotate(-5 92 310)"/>
+  <rect x="321" y="324" width="147" height="86" rx="8" fill="#102B4E"/>
+  <rect x="333" y="335" width="123" height="58" rx="3" fill="#D6AA45"/>
+  <path d="M342 365h101M391 343v42" stroke="#102B4E" stroke-width="8" stroke-linecap="round" opacity=".82"/>
+  <path d="M214 478v-86c0-77 53-118 116-118s117 41 117 118v86" fill="url(#shirt)"/>
+  <path d="M269 290c12 31 91 32 116 0l-7-50h-101z" fill="#A96E52"/>
+  <ellipse cx="327" cy="190" rx="81" ry="96" fill="#C48A67"/>
+  <path d="M250 197c-19-18-15-84 14-117 36-41 114-36 147 7 19 25 21 70 6 103-5-47-24-73-56-83-40 24-70 24-102 21-4 27-4 46-9 69z" fill="#172236"/>
+  <path d="M270 213c10 11 23 18 38 20M346 233c16-2 29-9 38-20" fill="none" stroke="#6E3E34" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="292" cy="186" r="6" fill="#102B4E"/><circle cx="361" cy="186" r="6" fill="#102B4E"/>
+  <path d="M301 249c18 11 36 11 54 0" fill="none" stroke="#8B3F43" stroke-width="5" stroke-linecap="round"/>
+  <path d="M237 390c25-47 57-70 89-70 34 0 72 27 98 70" fill="none" stroke="#F4CB68" stroke-width="10" stroke-linecap="round"/>
+  <text x="54" y="72" fill="#102B4E" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="4">AD B</text>
+</svg>

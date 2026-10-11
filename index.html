@@ -9,14 +9,14 @@
 <body>
     <header class="site-header">
         <a href="#home">
-            <img class="logo" id="home" src="/images/LPUR HANGOUT_wo-tagline logo.png" alt="LPUR HANGOUT">
+            <img class="logo" id="home" src="images/LPUR HANGOUT_wo-tagline logo.png" alt="LPUR HANGOUT">
         </a>
         
         <h2>Your Campus, Your Hangout</h2>
 
         <nav class="main-nav" aria-label="Main">
             <a href="#home">Home</a>
-            <a href="#about" id="about-link" aria-haspopup="dialog">About</a>
+            <a href="#about" id="about-link" aria-haspopup="dialog" aria-controls="about" aria-expanded="false">About</a>
             <a href="#service">Services</a>
             <a href="#announcements">Announcements</a>
             <a href="#contact">Contact</a>
@@ -137,31 +137,81 @@
                 <span aria-hidden="true">&times;</span>
             </button>
 
-            <p class="about-modal__eyebrow">About our website</p>
-            <h2 id="about-title">About LPUR Hangout</h2>
+            <header class="about-modal__hero">
+                <div class="about-modal__mark" aria-hidden="true">
+                    <span>LPUR</span>
+                    <i></i>
+                </div>
+                <div>
+                    <p class="about-modal__eyebrow">About LPUR Hangout</p>
+                    <h2 id="about-title">Make every campus break count.</h2>
+                </div>
+            </header>
+
             <p class="about-modal__description" id="about-description">
-                LPUR Hangout helps LPU Cavite students discover comfortable, useful, and enjoyable places to spend their vacant time on campus. We created it to make finding a place to relax, study, eat, or connect with friends quick and stress-free.
+                LPUR Hangout is a student-made guide to the best places to relax, study, eat, and connect at LPU Cavite. It puts useful campus spaces in one friendly, easy-to-explore home.
             </p>
 
-            <div class="about-modal__divider"></div>
-            <p class="about-modal__eyebrow">Meet the developers</p>
-            <div class="developer-grid">
-                <article class="developer-card">
-                    <img class="developer-photo" src="images/developer-1.svg" alt="Photo placeholder for Group Member 1">
-                    <h3>Group Member 1</h3>
-                    <p>HTML structure and website content</p>
+            <div class="about-highlights" aria-label="What LPUR Hangout is and why it was created">
+                <article class="about-highlight">
+                    <span class="about-highlight__icon" aria-hidden="true">⌁</span>
+                    <div>
+                        <h3>A campus companion</h3>
+                        <p>Discover hangout spots and services that fit whatever your vacant time looks like.</p>
+                    </div>
                 </article>
-                <article class="developer-card">
-                    <img class="developer-photo" src="images/developer-2.svg" alt="Photo placeholder for Group Member 2">
-                    <h3>Group Member 2</h3>
-                    <p>CSS design and responsive layout</p>
-                </article>
-                <article class="developer-card">
-                    <img class="developer-photo" src="images/developer-3.svg" alt="Photo placeholder for Group Member 3">
-                    <h3>Group Member 3</h3>
-                    <p>JavaScript interactions and testing</p>
+                <article class="about-highlight">
+                    <span class="about-highlight__icon" aria-hidden="true">✦</span>
+                    <div>
+                        <h3>Built with a purpose</h3>
+                        <p>We created LPUR Hangout so finding a comfortable place on campus feels quick, clear, and stress-free.</p>
+                    </div>
                 </article>
             </div>
+
+            <section class="about-team" aria-labelledby="team-title">
+                <div class="about-team__heading">
+                    <div>
+                        <p class="about-modal__eyebrow">The people behind it</p>
+                        <h3 id="team-title">Meet the developers</h3>
+                    </div>
+                    <span class="about-team__count" aria-label="Three developers">03</span>
+                </div>
+
+                <div class="developer-grid">
+                    <article class="developer-card" style="--card-delay: 90ms">
+                        <div class="developer-card__visual">
+                            <img class="developer-photo" src="images/developer-aquillis.svg" alt="Illustrated profile avatar for Aquillis Danielson Bonto">
+                            <span class="developer-card__number" aria-hidden="true">01</span>
+                        </div>
+                        <p class="developer-card__role">Interface &amp; layout</p>
+                        <h4>Aquillis Danielson <span>BONTO</span></h4>
+                        <p class="developer-card__contribution">Designed the website layout and shaped the visual experience across the page.</p>
+                    </article>
+                    <article class="developer-card" style="--card-delay: 150ms">
+                        <div class="developer-card__visual">
+                            <img class="developer-photo" src="images/developer-antonio.svg" alt="Illustrated profile avatar for Antonio Luis Luna">
+                            <span class="developer-card__number" aria-hidden="true">02</span>
+                        </div>
+                        <p class="developer-card__role">Content &amp; research</p>
+                        <h4>Antonio Luis <span>Luna</span></h4>
+                        <p class="developer-card__contribution">Organized the campus information, services, and hangout-spot content.</p>
+                    </article>
+                    <article class="developer-card" style="--card-delay: 210ms">
+                        <div class="developer-card__visual">
+                            <img class="developer-photo" src="images/developer-cleone.svg" alt="Illustrated profile avatar for Cleone Mathew German">
+                            <span class="developer-card__number" aria-hidden="true">03</span>
+                        </div>
+                        <p class="developer-card__role">Interactions &amp; testing</p>
+                        <h4>Cleone Mathew <span>German</span></h4>
+                        <p class="developer-card__contribution">Built the interactive features and refined the site for a smooth, responsive experience.</p>
+                    </article>
+                </div>
+            </section>
+
+            <button class="about-modal__done" type="button" data-close-about>
+                Back to the hangout <span aria-hidden="true">→</span>
+            </button>
         </div>
     </section>
 

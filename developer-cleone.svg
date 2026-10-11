@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrated profile for Cleone Mathew German</title>
+  <desc id="desc">A warm editorial-style illustration of a developer testing an interface.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D5E7D0"/><stop offset="1" stop-color="#77A8A3"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8A2341"/><stop offset="1" stop-color="#4A1830"/></linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <circle cx="510" cy="101" r="118" fill="#FFF9E9" opacity=".58"/>
+  <path d="M0 385c94-62 206-59 326-7 109 48 212 50 314 0v102H0z" fill="#173F6B" opacity=".16"/>
+  <rect x="91" y="316" width="458" height="108" rx="20" fill="#FFF9E9" transform="rotate(-3 91 316)"/>
+  <rect x="345" y="325" width="130" height="78" rx="10" fill="#102B4E"/>
+  <path d="M358 339h104v46H358z" fill="#D5E7D0"/>
+  <path d="M373 352h37m13 0h23m-73 17h73" stroke="#A6192E" stroke-width="7" stroke-linecap="round"/>
+  <path d="M202 478v-92c0-75 49-115 120-115 75 0 121 40 121 115v92" fill="url(#shirt)"/>
+  <path d="M265 286c13 36 88 36 115 0l-5-50H270z" fill="#9D684D"/>
+  <ellipse cx="324" cy="185" rx="79" ry="96" fill="#C9906D"/>
+  <path d="M244 182c-3-55 22-112 81-115 65-3 97 47 79 118-8-40-26-67-57-78-23 21-57 33-103 35z" fill="#221E2B"/>
+  <path d="M271 208c10 11 22 17 37 19M341 227c13-2 25-8 34-19" fill="none" stroke="#704537" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="292" cy="182" r="6" fill="#102B4E"/><circle cx="357" cy="182" r="6" fill="#102B4E"/>
+  <path d="M298 244c16 10 34 10 51 0" fill="none" stroke="#8B3F43" stroke-width="5" stroke-linecap="round"/>
+  <path d="M252 382c21-29 45-43 70-43 27 0 52 14 76 43" fill="none" stroke="#D6AA45" stroke-width="10" stroke-linecap="round"/>
+  <text x="52" y="71" fill="#173F6B" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="4">CMG</text>
+</svg>
