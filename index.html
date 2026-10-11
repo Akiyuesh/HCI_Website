@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPUR HANGOUT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/LPU logo.png" type="image/png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="#home">
+            <img class="logo" id="home" src="/images/LPUR HANGOUT_wo-tagline logo.png" alt="LPUR HANGOUT">
+        </a>
+        
+        <h2>Your Campus, Your Hangout</h2>
+
+        <nav class="main-nav" aria-label="Main">
+            <a href="#home" class="active" aria-current="page">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Services</a>
+            <a href="#announcements">Announcements</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome to LPUR HANGOUT</h2>
+            <p>Have you heard the word <strong>Relaxation</strong>?
+                Are you one of students experiencing <strong>boredomness</strong> during a long vacant?
+                Well, you are in the right place! Here at <strong>LPUR HANGOUT</strong>,
+                we will help you make the most of your campus life by discovering fun, relaxing,
+                and exciting places to spend your time here at LPU - CAVITE Campus.</p>
+            <button><strong>Explore</strong> 
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                    stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+            </button>
+        </section>
+        <aside class="slideshow">
+            <h2>Featured Places</h2>
+            <div class="slide-showcase">
+                <div class="slide-fade">
+                    <img src="images/Pirates Lounge - (3).jpg" alt="Pirates Lounge">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/Sotero Canteen - (2).jpg" alt="Sotero Canteen">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/The Circuit - (3).jpg" alt="The Circuit">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/JPL Canteen - (2).jpg" alt="JPL Canteen">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/Student Lounge - (3).jpg" alt="Student Lounge">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/Mahogany - (1).jpg" alt="Mahogany">
+                </div>
+                <div class="slide-fade">
+                    <img src="images/COECSA Lobby - (1).jpg" alt="COECSA Lobby">
+                </div>
+                <button class="slide-control previous" type="button" aria-label="Previous slide">&#10094;</button>
+                <button class="slide-control next" type="button" aria-label="Next slide">&#10095;</button>
+                <div class="slide-indicators" aria-label="Choose a slide"></div>
+                <div class="slide-caption" aria-live="polite"></div>
+            </div>
+        </aside>
+        <section class="announcements" id="announcements" aria-labelledby="legend-title">
+            <h2 id="legend-title" class="announcements-title"><strong>Announcements</strong>📢</h2>
+            <ul class="announcement-list" style="list-style-type: '❗';">
+                <li>
+                <strong>New Hangout Spot: The Student Lounge!</strong>
+                <span>Open Mon to Sat, 8 AM to 5 PM.</span>
+                </li>
+                <li>
+                <strong>New Kiosks At Mahogany: October 5 - 10</strong>
+                <span> Free vouchers for the first 50 customers.</span>
+                </li>
+                <li>
+                <strong>TESDA NCII Scheduled: Computer Library</strong>
+                <span>Starting October 12 - 15, Computer Library unavailable.</span>
+                </li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer class="site-footer">
+        <section class="footer-section" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title"><strong>Contact Us</strong></h2>
+            <ul>
+                <li><strong>Location:</strong> <button class="location-link" type="button" aria-haspopup="dialog" aria-controls="location-dialog">Lyceum of the Philippines University, Governor's Drive, General Trias, Cavite, 4017 Philippines</button></li>
+                <li><strong>Email:</strong> <a class="footer-link" href="mailto:admission_cvt@lpu.edu.ph">admission_cvt@lpu.edu.ph</a></li>
+                <li><strong>Hours:</strong> Mon to Fri, 8 AM to 5 PM</li>
+            </ul>
+        </section>
+
+        <hr>
+        <p class="footer-copy">&copy; 2026 LPUR HANGOUT (LPU-CAVITE). All rights reserved.</p>
+
+        <dialog class="location-dialog" id="location-dialog" aria-labelledby="location-dialog-title">
+            <div class="location-dialog-header">
+                <h2 id="location-dialog-title">LPU-CAVITE Location</h2>
+                <button class="location-dialog-close" type="button" aria-label="Close map">&times;</button>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.349224498996!2d120.9129317748665!3d14.291130586159388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d55f9534769d%3A0x8102047b46464ab7!2sLyceum%20of%20the%20Philippines%20University%20-%20Cavite!5e0!3m2!1sen!2sph!4v1791713067095!5m2!1sen!2sph"
+                title="Map to Lyceum of the Philippines University - Cavite"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </dialog>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
