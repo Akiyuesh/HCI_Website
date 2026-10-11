@@ -1,44 +1,3 @@
-const links = document.querySelectorAll('.main-nav a');
-const homeNavLink = document.querySelector('.main-nav a[href="#home"]');
-const logoLink = document.querySelector('.site-header a[href="#home"]');
-
-function setActiveLink(link) {
-  links.forEach((l) => {
-    l.classList.remove('active');
-    l.removeAttribute('aria-current');
-  });
-
-  if (link) {
-    link.classList.add('active');
-    link.setAttribute('aria-current', 'page');
-  }
-}
-
-links.forEach((link) => {
-  link.addEventListener('click', () => {
-    setActiveLink(link);
-  });
-});
-
-if (logoLink) {
-  logoLink.addEventListener('click', () => {
-    setActiveLink(homeNavLink);
-  });
-}
-
-const header = document.querySelector('.site-header');
-const nav = document.querySelector('.main-nav');
-const observer = new IntersectionObserver(
-    ([entry]) => {
-      // header fully out of view -> dock the nav
-      nav.classList.toggle('is-docked', !entry.isIntersecting);
-    },
-    { threshold: 0 }
-  );
-
-  observer.observe(header);
-
-
 const slideshow = document.querySelector(".slideshow");
 const slides = document.querySelectorAll(".slide-fade");
 const indicators = document.querySelector(".slide-indicators");
@@ -98,17 +57,50 @@ if (slideshow && slides.length > 0 && indicators && caption && previousButton &&
     slideshow.addEventListener("mouseleave", startSlideshow);
 }
 
-const locationLink = document.querySelector(".location-link");
-const locationDialog = document.querySelector(".location-dialog");
-const locationDialogClose = document.querySelector(".location-dialog-close");
+const header = document.querySelector('.site-header');
+const nav = document.querySelector('.main-nav');
+const observer = new IntersectionObserver(
+    ([entry]) => {
+      // header fully out of view -> dock the nav
+      nav.classList.toggle('is-docked', !entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
 
-if (locationLink && locationDialog && locationDialogClose) {
-    locationLink.addEventListener("click", () => locationDialog.showModal());
-    locationDialogClose.addEventListener("click", () => locationDialog.close());
+  observer.observe(header);
 
-    locationDialog.addEventListener("click", (event) => {
-        if (event.target === locationDialog) {
-            locationDialog.close();
-        }
-    });
+const aboutLink = document.querySelector("#about-link");
+const aboutModal = document.querySelector(".about-modal");
+const aboutModalContent = document.querySelector(".about-modal__content");
+const closeAboutButtons = document.querySelectorAll("[data-close-about]");
+let lastFocusedElement;
+
+function openAboutModal() {
+    if (!aboutModal) return;
+
+    lastFocusedElement = document.activeElement;
+    aboutModal.hidden = false;
+    document.body.classList.add("modal-open");
+    aboutModalContent.focus();
 }
+
+function closeAboutModal() {
+    if (!aboutModal || aboutModal.hidden) return;
+
+    aboutModal.hidden = true;
+    document.body.classList.remove("modal-open");
+    lastFocusedElement?.focus();
+}
+
+aboutLink?.addEventListener("click", (event) => {
+    event.preventDefault();
+    openAboutModal();
+});
+
+closeAboutButtons.forEach((button) => {
+    button.addEventListener("click", closeAboutModal);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeAboutModal();
+});
