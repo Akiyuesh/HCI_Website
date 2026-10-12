@@ -98,6 +98,76 @@ if (slideshow && slides.length > 0 && indicators && caption && previousButton &&
     slideshow.addEventListener("mouseleave", startSlideshow);
 }
 
+const campusSlideshow = document.querySelector(".campus-slideshow__showcase");
+
+if (campusSlideshow) {
+    const campusSlides = [...campusSlideshow.querySelectorAll(".campus-slideshow__slide")];
+    const campusIndicators = campusSlideshow.querySelector(".campus-slideshow__indicators");
+    const campusPreviousButton = campusSlideshow.querySelector(".campus-slideshow__control.previous");
+    const campusNextButton = campusSlideshow.querySelector(".campus-slideshow__control.next");
+    const campusSlideInterval = 4000;
+    let campusCurrentSlide = 0;
+    let campusTimerId;
+
+    if (campusSlides.length > 0 && campusIndicators && campusPreviousButton && campusNextButton) {
+        const campusIndicatorButtons = campusSlides.map((_, index) => {
+            const indicator = document.createElement("button");
+            indicator.className = "campus-slideshow__indicator";
+            indicator.type = "button";
+            indicator.setAttribute("aria-label", `Go to featured place ${index + 1}`);
+            indicator.addEventListener("click", () => showCampusSlide(index));
+            campusIndicators.append(indicator);
+            return indicator;
+        });
+
+        function showCampusSlide(index) {
+            campusSlides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("is-active", slideIndex === index);
+                campusIndicatorButtons[slideIndex].classList.toggle("is-active", slideIndex === index);
+                if (slideIndex === index) {
+                    campusIndicatorButtons[slideIndex].setAttribute("aria-current", "true");
+                } else {
+                    campusIndicatorButtons[slideIndex].removeAttribute("aria-current");
+                }
+            });
+            campusCurrentSlide = index;
+        }
+
+        function startCampusSlideshow() {
+            window.clearInterval(campusTimerId);
+            campusTimerId = window.setInterval(() => {
+                showCampusSlide((campusCurrentSlide + 1) % campusSlides.length);
+            }, campusSlideInterval);
+        }
+
+        showCampusSlide(0);
+        startCampusSlideshow();
+
+        campusPreviousButton.addEventListener("click", () => {
+            showCampusSlide((campusCurrentSlide - 1 + campusSlides.length) % campusSlides.length);
+            startCampusSlideshow();
+        });
+
+        campusNextButton.addEventListener("click", () => {
+            showCampusSlide((campusCurrentSlide + 1) % campusSlides.length);
+            startCampusSlideshow();
+        });
+
+        campusSlideshow.addEventListener("mouseenter", () => {
+            window.clearInterval(campusTimerId);
+        });
+        campusSlideshow.addEventListener("mouseleave", startCampusSlideshow);
+        campusSlideshow.addEventListener("focusin", () => {
+            window.clearInterval(campusTimerId);
+        });
+        campusSlideshow.addEventListener("focusout", (event) => {
+            if (!campusSlideshow.contains(event.relatedTarget)) {
+                startCampusSlideshow();
+            }
+        });
+    }
+}
+
 const aboutLink = document.querySelector("#about-link");
 const aboutModal = document.querySelector(".about-modal");
 const aboutModalContent = document.querySelector(".about-modal__content");
@@ -192,3 +262,89 @@ if (locationLink && locationDialog && locationDialogClose) {
         }
     });
 }
+
+const exploreButton = document.querySelector(".explore-button");
+const exploreDialog = document.querySelector("#explore-dialog");
+const exploreDialogClose = exploreDialog?.querySelector(".explore-dialog__close");
+const explorePlaceButtons = exploreDialog?.querySelectorAll(".explore-place-button");
+const explorePlacePanels = exploreDialog?.querySelectorAll(".explore-place-panel");
+
+exploreButton?.addEventListener("click", () => {
+    if (!exploreDialog) return;
+
+    exploreDialog.showModal();
+    exploreButton.setAttribute("aria-expanded", "true");
+});
+exploreDialogClose?.addEventListener("click", () => exploreDialog?.close());
+exploreDialog?.addEventListener("close", () => {
+    exploreButton?.setAttribute("aria-expanded", "false");
+});
+
+exploreDialog?.addEventListener("click", (event) => {
+    if (event.target === exploreDialog) {
+        exploreDialog.close();
+    }
+});
+
+if (explorePlaceButtons && explorePlacePanels) {
+    explorePlaceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedPanelId = button.getAttribute("aria-controls");
+
+            explorePlaceButtons.forEach((placeButton) => {
+                placeButton.setAttribute("aria-pressed", String(placeButton === button));
+            });
+
+            explorePlacePanels.forEach((panel) => {
+                panel.hidden = panel.id !== selectedPanelId;
+            });
+        });
+    });
+}
+
+exploreDialog?.querySelectorAll(".explore-carousel").forEach((carousel) => {
+    const slides = [...carousel.querySelectorAll(".explore-slide-fade")];
+    const indicators = carousel.querySelector(".explore-slide-indicators");
+    const previousButton = carousel.querySelector(".explore-slide-control.previous");
+    const nextButton = carousel.querySelector(".explore-slide-control.next");
+    let currentSlide = -1;
+
+    if (slides.length === 0 || !indicators || !previousButton || !nextButton) return;
+
+    const indicatorButtons = slides.map((_, index) => {
+        const indicator = document.createElement("button");
+        indicator.className = "explore-slide-indicator";
+        indicator.type = "button";
+        indicator.setAttribute("aria-label", `Go to image ${index + 1}`);
+        indicator.addEventListener("click", () => showSlide(index));
+        indicators.append(indicator);
+        return indicator;
+    });
+
+    function showSlide(index) {
+        slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle("is-active", slideIndex === index);
+            indicatorButtons[slideIndex].classList.toggle("is-active", slideIndex === index);
+            if (slideIndex === index) {
+                indicatorButtons[slideIndex].setAttribute("aria-current", "true");
+            } else {
+                indicatorButtons[slideIndex].removeAttribute("aria-current");
+            }
+        });
+        currentSlide = index;
+    }
+
+    showSlide(0);
+    const hasMultipleSlides = slides.length > 1;
+    previousButton.hidden = !hasMultipleSlides;
+    nextButton.hidden = !hasMultipleSlides;
+    indicators.hidden = !hasMultipleSlides;
+
+    previousButton.addEventListener("click", () => {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+    });
+
+    nextButton.addEventListener("click", () => {
+        showSlide((currentSlide + 1) % slides.length);
+    });
+});

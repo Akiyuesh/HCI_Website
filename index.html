@@ -32,7 +32,7 @@
                 Well, you are in the right place! Here at <strong>LPUR HANGOUT</strong>,
                 we will help you make the most of your campus life by discovering fun, relaxing,
                 and exciting places to spend your time here at LPU - CAVITE Campus.</p>
-            <button><strong>Explore</strong> 
+            <button class="explore-button" type="button" aria-haspopup="dialog" aria-controls="explore-dialog" aria-expanded="false"><strong>Explore</strong>
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
                     stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -70,6 +70,173 @@
                 <div class="slide-caption" aria-live="polite"></div>
             </div>
         </aside>
+        <dialog class="explore-dialog" id="explore-dialog" aria-labelledby="explore-dialog-title">
+            <div class="explore-dialog__header">
+                <div>
+                    <p class="explore-dialog__eyebrow">Explore LPU-Cavite</p>
+                    <h2 id="explore-dialog-title">Featured Places</h2>
+                </div>
+                <button class="explore-dialog__close" type="button" aria-label="Close featured places">&times;</button>
+            </div>
+            <nav class="explore-place-list" aria-label="Featured places">
+                <button type="button" class="explore-place-button" aria-controls="explore-pirates-lounge" aria-pressed="true">Pirates Lounge</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-sotero-canteen" aria-pressed="false">Sotero Canteen</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-the-circuit" aria-pressed="false">The Circuit</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-jpl-canteen" aria-pressed="false">JPL Canteen</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-student-lounge" aria-pressed="false">Student Lounge</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-mahogany" aria-pressed="false">Mahogany</button>
+                <button type="button" class="explore-place-button" aria-controls="explore-coecsa-lobby" aria-pressed="false">COECSA Lobby</button>
+            </nav>
+            <div class="explore-place-panels">
+                <section class="explore-place-panel" id="explore-pirates-lounge" aria-labelledby="explore-pirates-lounge-title">
+                    <h3 id="explore-pirates-lounge-title">Pirates Lounge</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/Pirates Lounge - (3).jpg" alt="Pirates Lounge"></div>
+                            <div class="explore-slide-fade"><img src="images/Pirates Lounge - (1).jpg" alt="Pirates Lounge"></div>
+                            <div class="explore-slide-fade"><img src="images/Pirates Lounge - (2).jpg" alt="Pirates Lounge"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous Pirates Lounge image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next Pirates Lounge image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="Pirates Lounge images"></div>
+                    </div>
+                    <p class="explore-place-caption">Kick back with friends at this lively campus hangout. Beside, is the cafe that will wake you up to be active.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-sotero-canteen" aria-labelledby="explore-sotero-canteen-title" hidden>
+                    <h3 id="explore-sotero-canteen-title">Sotero Canteen</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/Sotero Canteen - (2).jpg" alt="Sotero Canteen"></div>
+                            <div class="explore-slide-fade"><img src="images/Sotero Canteen - (1).jpg" alt="Sotero Canteen"></div>
+                            <div class="explore-slide-fade"><img src="images/Sotero Canteen - (3).jpg" alt="Sotero Canteen"></div>
+                            <div class="explore-slide-fade"><img src="images/Sotero Canteen - (4).jpg" alt="Sotero Canteen"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous Sotero Canteen image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next Sotero Canteen image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="Sotero Canteen images"></div>
+                    </div>
+                    <p class="explore-place-caption">A lively place and accessible in the morning. Homemade-cook, different to choose from, where all of it suits to your taste and your budget.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-the-circuit" aria-labelledby="explore-the-circuit-title" hidden>
+                    <h3 id="explore-the-circuit-title">The Circuit</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/The Circuit - (3).jpg" alt="The Circuit"></div>
+                            <div class="explore-slide-fade"><img src="images/The Circuit - (1).jpg" alt="The Circuit"></div>
+                            <div class="explore-slide-fade"><img src="images/The Circuit - (2).jpg" alt="The Circuit"></div>
+                            <div class="explore-slide-fade"><img src="images/The Circuit - (4).jpg" alt="The Circuit"></div>
+                            <div class="explore-slide-fade"><img src="images/The Circuit - (5).jpg" alt="The Circuit"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous The Circuit image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next The Circuit image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="The Circuit images"></div>
+                    </div>
+                    <p class="explore-place-caption">A comfortable to eat and rest. Known brands appears to be here. Accessible at COECSA building.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-jpl-canteen" aria-labelledby="explore-jpl-canteen-title" hidden>
+                    <h3 id="explore-jpl-canteen-title">JPL Canteen</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/JPL Canteen - (2).jpg" alt="JPL Canteen"></div>
+                            <div class="explore-slide-fade"><img src="images/JPL Canteen - (3).jpg" alt="JPL Canteen"></div>
+                            <div class="explore-slide-fade"><img src="images/JPL Canteen - (1).jpg" alt="JPL Canteen"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous JPL Canteen image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next JPL Canteen image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="JPL Canteen images"></div>
+                    </div>
+                    <p class="explore-place-caption">A challenging exploration, and looks at food yet to be enjoy. Looking for big serving where your money spots a great deal if you don't mind the floor it reside.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-student-lounge" aria-labelledby="explore-student-lounge-title" hidden>
+                    <h3 id="explore-student-lounge-title">Student Lounge</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/Student Lounge - (3).jpg" alt="Student Lounge"></div>
+                            <div class="explore-slide-fade"><img src="images/Student Lounge - (1).jpg" alt="Student Lounge"></div>
+                            <div class="explore-slide-fade"><img src="images/Student Lounge - (2).jpg" alt="Student Lounge"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous Student Lounge image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next Student Lounge image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="Student Lounge images"></div>
+                    </div>
+                    <p class="explore-place-caption">Another good place to rest and relax. Very accessible for the COECSA students, alongside with its internet connectivity availability and elegant structure of furniture, good for studying.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-mahogany" aria-labelledby="explore-mahogany-title" hidden>
+                    <h3 id="explore-mahogany-title">Mahogany</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/Mahogany - (1).jpg" alt="Mahogany"></div>
+                            <div class="explore-slide-fade"><img src="images/Mahogany - (2).jpg" alt="Mahogany"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous Mahogany image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next Mahogany image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="Mahogany images"></div>
+                    </div>
+                    <p class="explore-place-caption">Looking for a place where changes are frequently. New things formed here, foods and products that satisfy and explore your needs.</p>
+                </section>
+                <section class="explore-place-panel" id="explore-coecsa-lobby" aria-labelledby="explore-coecsa-lobby-title" hidden>
+                    <h3 id="explore-coecsa-lobby-title">COECSA Lobby</h3>
+                    <div class="explore-carousel">
+                        <div class="explore-carousel__slides">
+                            <div class="explore-slide-fade"><img src="images/COECSA Lobby - (1).jpg" alt="COECSA Lobby"></div>
+                            <div class="explore-slide-fade"><img src="images/COECSA Lobby - (2).jpg" alt="COECSA Lobby"></div>
+                        </div>
+                        <button class="explore-slide-control previous" type="button" aria-label="Previous COECSA Lobby image">&#10094;</button>
+                        <button class="explore-slide-control next" type="button" aria-label="Next COECSA Lobby image">&#10095;</button>
+                        <div class="explore-slide-indicators" aria-label="COECSA Lobby images"></div>
+                    </div>
+                    <p class="explore-place-caption">A resting place next to elevator, perfect for a quick nap with accessible lift-ups to consider time.</p>
+                </section>
+            </div>
+        </dialog>
+        <section class="campus-slideshow" aria-labelledby="campus-slideshow-title">
+            <h2 id="campus-slideshow-title">Discover Campus Hangouts</h2>
+            <div class="campus-slideshow__showcase" aria-roledescription="carousel" aria-label="Featured campus places">
+                <div class="campus-slideshow__slide">
+                    <img src="images/LPU-C_closeup - (3).JPG" alt="JPL Statue Closeup 3">
+                    <p class="campus-slideshow__caption">Veritas et Fortitudo Pro Deo et Patria</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/LPU-C_closeup - (1).JPG" alt="JPL Statue Closeup 1">
+                    <p class="campus-slideshow__caption">Veritas et Fortitudo Pro Deo et Patria</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/LPU-C - (3).JPG" alt="JPL Statue Wideshot">
+                    <p class="campus-slideshow__caption">Veritas et Fortitudo Pro Deo et Patria</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/Pirates Lounge - (2).jpg" alt="Pirates Lounge">
+                    <p class="campus-slideshow__caption">Relax and catch up with friends at Pirates Lounge.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/Sotero Canteen - (1).jpg" alt="Sotero Canteen">
+                    <p class="campus-slideshow__caption">Enjoy a hearty meal or snack at Sotero Canteen.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/The Circuit - (2).jpg" alt="The Circuit">
+                    <p class="campus-slideshow__caption">Take a break and spend time with friends at The Circuit.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/JPL Canteen - (1).jpg" alt="JPL Canteen">
+                    <p class="campus-slideshow__caption">Find a convenient bite at JPL Canteen.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/Student Lounge - (2).jpg" alt="Student Lounge">
+                    <p class="campus-slideshow__caption">Unwind between classes in the Student Lounge.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/Mahogany - (2).jpg" alt="Mahogany">
+                    <p class="campus-slideshow__caption">Explore the shops and food options at Mahogany.</p>
+                </div>
+                <div class="campus-slideshow__slide">
+                    <img src="images/COECSA Lobby - (2).jpg" alt="COECSA Lobby">
+                    <p class="campus-slideshow__caption">Take a comfortable pause at the COECSA Lobby.</p>
+                </div>
+                <button class="campus-slideshow__control previous" type="button" aria-label="Previous featured place">&#10094;</button>
+                <button class="campus-slideshow__control next" type="button" aria-label="Next featured place">&#10095;</button>
+                <div class="campus-slideshow__indicators" aria-label="Choose a featured place"></div>
+            </div>
+        </section>
         <section class="announcements" id="announcements" aria-labelledby="legend-title">
             <h2 id="legend-title" class="announcements-title"><strong>Announcements</strong>📢</h2>
             <ul class="announcement-list" style="list-style-type: '❗';">
@@ -103,7 +270,7 @@
                         Find a quiet place to study, read books,
                         and use learning resources during your vacant time.
                     </p>
-                    <a href="#contact" class="service-link">Learn More →</a>
+                    <a href="#contact" class="service-link">Learn More</a>
                 </article>
 
                 <article class="service-card">
@@ -113,7 +280,7 @@
                         Get information about enrollment, school records,
                         and other academic documents.
                     </p>
-                    <a href="#contact" class="service-link">Learn More →</a>
+                    <a href="#contact" class="service-link">Learn More</a>
                 </article>
 
                 <article class="service-card">
@@ -123,7 +290,7 @@
                         Find help with campus technology, computer access,
                         and common technical concerns.
                     </p>
-                    <a href="#contact" class="service-link">Learn More →</a>
+                    <a href="#contact" class="service-link">Learn More</a>
                 </article>
 
             </div>
